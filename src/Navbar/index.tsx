@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import imag from '../oil-lamp.png'
 
 import "./nav.css";
 
@@ -10,7 +11,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "#16223d" }}>
         <div className="container-fluid">
           <NavLink to="/" className="logo">
-            Lamp to my feet
+            Lamp to my feet <img src={imag} alt="" />
           </NavLink>
 
           {/* Ajustamos la clase del botón para usar el ícono de Bootstrap por defecto */}
