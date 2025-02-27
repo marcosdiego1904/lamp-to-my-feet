@@ -26,7 +26,7 @@ const Categories = () => {
           // Si es un objeto, trata de convertirlo en array
           const categoriesArray = Object.values(data);
           console.log("Convertido a array:", categoriesArray);
-          setCategories(categoriesArray);
+          setCategories(categoriesArray as { id: number; name: string }[]);
         } else {
           console.error("El formato de datos recibido no es compatible:", data);
           setCategories([]); // Establece un array vacío como fallback
