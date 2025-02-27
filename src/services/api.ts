@@ -15,15 +15,16 @@ export const getCategories = async () => {
       return [];
     }
   };
-  export const getSubcategories = async (categoryId) => {
+  export const getSubcategories = async (categoryId: number) => {
     try {
-      const response = await api.get(`/subcategories/${categoryId}`); // ✅ Usa el endpoint correcto
+      const response = await api.get(`/subcategories/${categoryId}`);
       return response.data;
     } catch (error) {
       console.error(`Error fetching subcategories for category ${categoryId}:`, error);
       return [];
     }
   };
+  
   export const getVerses = async (subcategoryId: number) => {
     try {
       const response = await fetch(`http://localhost:5000/verses/${subcategoryId}`); // 🔥 URL CORRECTA
