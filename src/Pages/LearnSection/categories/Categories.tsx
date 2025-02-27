@@ -17,9 +17,23 @@ const Categories = () => {
     const fetchCategories = async () => {
       try {
         const data = await getCategories();
-        setCategories(data);
+        console.log("Categorías recibidas:", data);
+        
+        // Verifica si data es un array y si no lo es, asegúrate de convertirlo
+        if (Array.isArray(data)) {
+          setCategories(data);
+        } else if (data && typeof data === 'object') {
+          // Si es un objeto, trata de convertirlo en array
+          const categoriesArray = Object.values(data);
+          console.log("Convertido a array:", categoriesArray);
+          setCategories(categoriesArray);
+        } else {
+          console.error("El formato de datos recibido no es compatible:", data);
+          setCategories([]); // Establece un array vacío como fallback
+        }
       } catch (error) {
         console.error("Error fetching categories:", error);
+        setCategories([]);
       }
     };
     fetchCategories();

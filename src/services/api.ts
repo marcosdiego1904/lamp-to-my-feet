@@ -27,15 +27,9 @@ export const getCategories = async () => {
   
   export const getVerses = async (subcategoryId: number) => {
     try {
-      const response = await fetch(`http://localhost:5000/verses/${subcategoryId}`); // 🔥 URL CORRECTA
-  
-      if (!response.ok) {
-        throw new Error(`HTTP Error: ${response.status}`);
-      }
-  
-      const data = await response.json();
-      console.log("Versículos obtenidos:", data); // Depuración
-      return data;
+      // Usa la misma URL base para todas las peticiones
+      const response = await api.get(`/verses/${subcategoryId}`);
+      return response.data;
     } catch (error) {
       console.error("Error obteniendo versículos:", error);
       return [];
