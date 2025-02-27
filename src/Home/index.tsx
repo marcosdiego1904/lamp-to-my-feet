@@ -5,7 +5,7 @@ import Categories from "../Pages/LearnSection/categories/Categories";
 
 const Home = () => {
   // Estado para almacenar las categorías
-  const [, setCategories] = useState<{ id: number; name: string }[]>([]);
+  const [categories, setCategories] = useState<{ id: number; name: string }[]>([]);
 
   // Estado para ocultar la sección Home cuando se hace scroll
   const [scrolledToCategories, setScrolledToCategories] = useState(false);

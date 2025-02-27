@@ -72,10 +72,9 @@ const Categories = () => {
 
   // 🔥 Función para seleccionar un versículo y navegar a la sección de aprendizaje
   const handleVerseClick = (verse: { id: number; text_nlt: string; verse_reference: string; context_nlt: string }) => {
-    console.log("Navigating with verse:", verse); // Verificar en consola
+    console.log("Navegando con versículo:", verse); // Para verificar en consola
     navigate("/learn", { state: { selectedVerse: verse } });
   };
-  
 
   return (
     <div className="main-cont">
